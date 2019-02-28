@@ -39,6 +39,29 @@ public class Main {
 	}
 	
 	public static boolean checkAnswer(int answer) {
+		if (answer < 1 || answer > 100)
+		{
+			System.out.println("잘못입력하였습니다. 1~100 사이의 정수를 입력해주십시오.");
+			return false;
+		}
+			
+		count++;
+		
+		if (answer == randomNumber)
+		{
+			return true;
+		}
+		else if (randomNumber < answer && answer < max )
+		{
+			max = answer;
+			return false;
+		}
+		else if (randomNumber > answer && answer > min)
+		{
+			min = answer;
+			return false;
+		}
+		
 		return true;
 	}
 }
